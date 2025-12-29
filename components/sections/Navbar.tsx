@@ -21,8 +21,6 @@ const Navbar = () => {
     useEffect(() => {
         setIsMounted(true);
         const handleScroll = () => {
-            // const isScrolled = window.scrollY > 20;
-            // setScrolled(isScrolled);
             setScrolled(window.scrollY > 10);
 
             // 1. ADD 'contact' HERE
@@ -57,8 +55,8 @@ const Navbar = () => {
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-                ? 'bg-white backdrop-blur-md shadow-sm border-b border-slate-100 py-3'
-                : 'bg-transparent py-5 z-[100]'
+            ? 'bg-white backdrop-blur-md shadow-sm border-b border-slate-100 py-3'
+            : 'bg-transparent py-5 z-[100]'
             }`}>
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <div className="font-bold text-xl tracking-tighter text-slate-900">
@@ -87,7 +85,7 @@ const Navbar = () => {
                     <div className="h-6 w-[1px] bg-slate-200 mx-2"></div>
                     <a
                         href="/resume.pdf"
-                        className="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-600 transition-all"
+                        className="flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-lg text-base font-semibold hover:bg-blue-600 transition-all"
                     >
                         <Download size={14} /> Resume
                     </a>
@@ -113,6 +111,14 @@ const Navbar = () => {
                             {link.name}
                         </a>
                     ))}
+                    <hr className="border-slate-100 my-2" />
+                    <a
+                        href="/resume.pdf"
+                        download
+                        className="flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-lg text-base font-semibold hover:bg-blue-600 transition-all"
+                    >
+                        <Download size={18} /> Download Resume
+                    </a>
                 </div>
             )}
         </nav>

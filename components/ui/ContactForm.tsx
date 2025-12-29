@@ -35,24 +35,27 @@ const ContactForm = () => {
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Name</label>
+                    <label htmlFor='user_name' className="block text-sm font-semibold text-slate-700 mb-2">Name</label>
                     <input
+                        id='user_name'
                         type="text" name="user_name" required
                         className="w-full p-3 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-blue-500 outline-none"
                         placeholder="John Doe"
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                    <label htmlFor='user_email' className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
                     <input
+                        id='user_email'
                         type="email" name="user_email" required
                         className="w-full p-3 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-blue-500 outline-none"
                         placeholder="john@example.com"
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
+                    <label htmlFor="message"className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
                     <textarea
+                    id='message'
                         name="message" required rows={4}
                         className="w-full p-3 rounded-lg border border-slate-300 bg-white text-slate-900 placeholder:text-slate-500 focus:ring-2 focus:ring-blue-500 outline-none"
                         placeholder="How can I help you?"

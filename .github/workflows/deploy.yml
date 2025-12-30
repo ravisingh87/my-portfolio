@@ -25,22 +25,13 @@ jobs:
           proxy_key: ${{ secrets.SSH_KEY }}
           
           script: |
-            script: |
-            cd ~/iamravisingh-portfolio
-            
-            # HARD RESET git to match GitHub exactly
-            git fetch --all
-            git reset --hard origin/main
-            
-            # Clean out old build files completely
-            rm -rf .next node_modules
-            
+            cd ~/my-portfolio
+            git pull origin main
             npm install
             npm run build
             
-            # The "Nuke and Restart" approach for PM2
-            pm2 delete portfolio || true
-            pm2 start npm --name "portfolio" -- start
+            # Use --cwd to force PM2 to the correct folder
+            pm2 restart portfolio --update-env --cwd ~/my-portfolio || pm2 start npm --name "portfolio" --cwd ~/my-portfolio -- start
             pm2 save
 
       - name: Purge Cloudflare Cache

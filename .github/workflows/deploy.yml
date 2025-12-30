@@ -25,12 +25,22 @@ jobs:
           proxy_key: ${{ secrets.SSH_KEY }}
           
           script: |
-            cd ~/your-repo-folder-on-private-instance
-            git pull origin main
+            script: |
+            cd ~/iamravisingh-portfolio
+            
+            # HARD RESET git to match GitHub exactly
+            git fetch --all
+            git reset --hard origin/main
+            
+            # Clean out old build files completely
+            rm -rf .next node_modules
+            
             npm install
-            rm -rf .next
             npm run build
-            pm2 restart portfolio --update-env || pm2 start npm --name "portfolio" -- start
+            
+            # The "Nuke and Restart" approach for PM2
+            pm2 delete portfolio || true
+            pm2 start npm --name "portfolio" -- start
             pm2 save
 
       - name: Purge Cloudflare Cache

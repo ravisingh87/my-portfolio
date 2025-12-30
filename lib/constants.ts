@@ -4,13 +4,13 @@ export const PERSONAL_INFO = {
   experience: "5.8+ Years",
   email: "ravisingh19870903@gmail.com",
   location: "India",
-  linkedIn: "https://www.linkedin.com/in/your-profile",
-  github: "https://github.com/your-username",
+  linkedIn: "https://www.linkedin.com/in/ravisingh87",
+  github: "https://github.com/ravisingh87",
 };
 
 export const SEO_CONFIG = {
   description: `${PERSONAL_INFO.title} with ${PERSONAL_INFO.experience} experience specializing in Banking, Healthcare, and E-commerce.`,
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://your-portfolio.vercel.app",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://iamravisingh.in",
   googleVerification: "ABC_123_XYZ", // Paste your real code here
 };
 

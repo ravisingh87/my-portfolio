@@ -8,7 +8,7 @@ const Hero = () => {
         Frontend Developer II | React Ecosystem Expert
       </div>
       <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6">
-        Ravi Shankar Singh
+        Ravi Sh. Singh
       </h1>
       <p className="text-xl text-slate-600 max-w-2xl mb-10">
         5.8 years of experience driving digital transformation in Healthcare, Banking, and E-commerce. 

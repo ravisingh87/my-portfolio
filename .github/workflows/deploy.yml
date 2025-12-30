@@ -28,6 +28,13 @@ jobs:
             cd ~/your-repo-folder-on-private-instance
             git pull origin main
             npm install
+            rm -rf .next
             npm run build
-            pm2 restart portfolio || pm2 start npm --name "portfolio" -- start
+            pm2 restart portfolio --update-env || pm2 start npm --name "portfolio" -- start
             pm2 save
+
+      - name: Purge Cloudflare Cache
+        uses: jakejarvis/cloudflare-purge-action@master
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

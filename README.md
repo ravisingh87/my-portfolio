@@ -1,66 +1,62 @@
-# Senior Frontend Portfolio | Ravi Shankar Singh
+🚀 iamravisingh.in | Personal Portfolio
+A high-performance, secure portfolio built with Next.js, deployed on a hardened AWS Multi-Tier Architecture, and automated via GitHub Actions.
 
-A high-performance, responsive portfolio built with **Next.js 15** and **Tailwind CSS**, designed to showcase 5.8+ years of experience in frontend engineering.
+🏗️ The Infrastructure Architecture
+This project is hosted on a professional-grade AWS setup designed for security and scalability:
 
-## 🚀 Tech Stack
+Cloudflare (Edge Layer): Handles DNS, SSL (Flexible mode), and global CDN caching.
 
-- **Framework:** [Next.js 15 (App Router)](https://nextjs.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Contact Integration:** [EmailJS](https://www.emailjs.com/)
-- **Deployment:** [AWS Amplify](https://aws.amazon.com/amplify/)
+Bastion Host (Public Subnet): Acts as a secure gateway (Jump Box) and runs an Nginx Reverse Proxy to route traffic.
 
-## ✨ Key Features
+Private Instance (Private Subnet): Houses the Next.js application, completely isolated from the public internet.
 
-- **Modern UI/UX:** Clean, professional aesthetic with a focus on readability and performance.
-- **Responsive Design:** Fully optimized for mobile, tablet, and desktop views.
-- **Type Safety:** Built with TypeScript to ensure robust code and easier maintenance.
-- **Optimized SEO:** Configured with dynamic Metadata, Sitemaps, and OpenGraph images.
-- **Direct Contact:** Integrated contact form and "Copy to Clipboard" email functionality.
+NAT Gateway: Allows the Private Instance to securely fetch updates (npm install, git pull) without exposing incoming ports.
 
-## 🛠️ Project Structure
+PM2: Process manager ensuring the Node.js application stays online 24/7.
 
-```text
-├── app/              # Next.js App Router (Pages, Layouts, Metadata)
-├── components/       # Reusable UI components (Navbar, Footer, Hero)
-├── lib/              # Centralized constants and utility functions
-├── public/           # Static assets (Favicons, OG-Images)
+🛠️ Tech Stack
+Frontend: Next.js, Tailwind CSS, Framer Motion.
 
+Deployment: AWS EC2 (Amazon Linux 2023), Nginx.
 
-🚀 Technical Challenges & Solutions
-1. Bridge between Server Components and Client Animations
-Challenge: Next.js 15 uses Server Components by default for better SEO and performance. However, libraries like Framer Motion require a Client Component environment (using the 'use client' directive).
+Automation: GitHub Actions (CI/CD).
 
-Solution: I implemented a Wrapper Pattern. By isolating animation logic into dedicated client-side components and wrapping the RootLayout or specific sections, I maintained the SEO benefits of Server-Side Rendering (SSR) while enabling high-performance animations.
+Security: VPC, Private Subnets, Security Groups, Cloudflare WAF.
 
-2. Modernizing Configuration with Tailwind CSS v4
-Challenge: Migrating to the latest Tailwind CSS v4 (alpha/beta) which moves away from the traditional tailwind.config.js JavaScript-based configuration.
+🚀 CI/CD Pipeline
+The deployment is fully automated. On every push to the main branch, the following occurs:
 
-Solution: I adopted the CSS-first approach by configuring the design system directly within globals.css using the @theme block. This reduces build-time JavaScript overhead and aligns with the modern web standard of using CSS variables for theme management.
+Build & Lint: The code is validated and built on a GitHub Runner.
 
-3. Maintainability through Centralized Constants
-Challenge: In a scaling portfolio, updating personal details (experience, titles, SEO meta) across multiple pages and components often leads to "Magic Strings" and inconsistency.
+Secure Proxy Jump: GitHub connects to the Bastion Host to "hop" into the Private Instance via SSH.
 
-Solution: I architected a Single Source of Truth by centralizing all global variables in lib/constants.ts. This allows for global updates to personal branding and SEO metadata from a single file, significantly reducing the "surface area" for bugs during future updates.
+Atomic Update: The latest code is pulled, dependencies are installed, and the project is rebuilt on the server.
 
-4. Secure Contact Integration on the Frontend
-Challenge: Implementing a functional contact form without a dedicated backend/database while keeping API credentials secure.
+Zero-Downtime Restart: PM2 reloads the application.
 
-Solution: Integrated EmailJS for direct client-to-email communication. I secured the integration by utilizing Environment Variables (.env.local) for sensitive Service and Template IDs, ensuring they are never exposed in the public version of the code repository.
+Cache Purge: A signal is sent to the Cloudflare API to purge the global edge cache, making changes live instantly.
 
+💻 Local Development
+Clone the repository:
 
+Bash
 
-## 📦 Getting Started
+git clone https://github.com/your-username/your-repo.git
+Install dependencies:
 
-### Prerequisites
-- Node.js 18+ 
-- Docker (optional, for containerized execution)
+Bash
 
-### Local Development
-```bash
-# Install dependencies
 npm install
+Set up environment variables: Create a .env.local file with your EmailJS or API keys.
 
-# Run development server
+Run the development server:
+
+Bash
+
 npm run dev
+🔒 Security Best Practices Implemented
+Isolation: The app server has no Public IP; it is only reachable via the Bastion Host.
+
+Least Privilege: Security Groups are locked down to only allow traffic from Cloudflare IPs and the Bastion Host.
+
+Environment Safety: Sensitive API keys are managed via GitHub Secrets and manual .env injection on the private server.

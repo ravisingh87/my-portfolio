@@ -22,7 +22,7 @@ const Hero = () => {
           <p className="text-sm text-slate-500 uppercase tracking-wide">Load Time Improvement</p>
         </div>
         <div>
-          <h3 className="text-3xl font-bold text-blue-600">91%+</h3>
+          <h3 className="text-3xl font-bold text-blue-600">90%+</h3>
           <p className="text-sm text-slate-500 uppercase tracking-wide">Test Coverage</p>
         </div>
         <div>

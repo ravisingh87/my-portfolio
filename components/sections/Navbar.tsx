@@ -84,7 +84,7 @@ const Navbar = () => {
                     })}
                     <div className="h-6 w-[1px] bg-slate-200 mx-2"></div>
                     <a
-                        href="/resume.pdf"
+                        href="/RaviSingh.pdf"
                         className="flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-lg text-base font-semibold hover:bg-blue-600 transition-all"
                     >
                         <Download size={14} /> Resume
@@ -113,7 +113,7 @@ const Navbar = () => {
                     ))}
                     <hr className="border-slate-100 my-2" />
                     <a
-                        href="/resume.pdf"
+                        href="/RaviSingh.pdf"
                         download
                         className="flex items-center justify-center gap-2 bg-slate-900 text-white px-4 py-3 rounded-lg text-base font-semibold hover:bg-blue-600 transition-all"
                     >

@@ -8,31 +8,29 @@ const About = () => {
       </h2>
 
       <div className="block">
-        {/* The Image Wrapper - Floated Left */}
-        <div className="float-left mr-8 mb-6 relative group w-full max-w-[280px] md:max-w-[320px]">
+        {/* Profile Image - Responsive Floating */}
+        <div className="relative group w-full max-w-[280px] mx-auto mb-8 lg:float-left lg:mr-10 lg:mb-6 lg:mx-0">
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-          
           <div className="relative bg-white border border-slate-200 p-2 rounded-2xl overflow-hidden shadow-2xl">
             <div className="aspect-square bg-slate-100 rounded-xl relative overflow-hidden">
-              <Image 
+              <Image
                 src="/profile.jpeg"
-                alt="Ravi Shankar Singh - Professional Headshot"
+                alt="Ravi Shankar Singh"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 priority
               />
             </div>
           </div>
-          
           {/* Experience Badge */}
-          <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-xl hidden md:block z-10">
+          <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-xl z-10">
             <p className="text-3xl font-bold leading-none">5.8</p>
             <p className="text-[10px] uppercase tracking-widest opacity-90 font-semibold">Years Experience</p>
           </div>
         </div>
 
-        {/* The Narrative Text - Now wraps around the floated div */}
-        <div className="text-lg text-slate-600 leading-relaxed">
+        {/* Narrative Text & Metadata Info */}
+        <div className="text-lg text-slate-600 leading-relaxed text-justify">
           <p className="mb-6">
             My journey in software development began 5.8 years ago with a simple goal:{' '}
             <span className="text-slate-900 font-semibold">
@@ -42,10 +40,9 @@ const About = () => {
 
           <p className="mb-6">
             I’ve spent the majority of my career in the trenches of the{' '}
-            <span className="text-blue-600 font-bold italic underline decoration-blue-200 underline-offset-4">React ecosystem</span>, 
+            <span className="text-blue-600 font-bold italic underline decoration-blue-200 underline-offset-4">React ecosystem</span>,
             navigating the evolution from Class components to Hooks, and now to the power of{' '}
-            <span className="text-blue-600 font-bold">Next.js and TypeScript</span>. Whether it was optimizing data-heavy{' '}
-            <span className="text-slate-800 font-medium border-b border-blue-400">dashboards</span> for Banking or ensuring 100% uptime for Healthcare interfaces, I thrive on the challenge of building systems that are both scalable and resilient.
+            <span className="text-blue-600 font-bold">Next.js and TypeScript</span>. Whether it was optimizing data-heavy dashboards for Banking or ensuring 100% uptime for Healthcare interfaces, I thrive on the challenge of building systems that are both scalable and resilient.
           </p>
 
           <p className="mb-8">
@@ -58,18 +55,21 @@ const About = () => {
             certification to better understand how frontend applications live and breathe within modern cloud infrastructures.
           </p>
 
-          {/* Quick Details - Use 'clear-both' to ensure this stays below everything */}
-         <div className="pt-4 flex gap-4">
-              <div className="flex flex-col">
-                <span className="text-slate-900 font-bold">Location</span>
-                <span className="text-sm">Pune, MH</span>
-              </div>
-              <div className="w-[1px] h-10 bg-slate-200"></div>
-              <div className="flex flex-col">
-                <span className="text-slate-900 font-bold">Philosophy</span>
-                <span className="text-sm">Test-Driven Development</span>
-              </div>
+          {/* Location & Philosophy - Now Aligned with Paragraph */}
+
+          {/* Location & Philosophy - Positioned close together and aligned */}
+          <div className="pt-6 mt-6 border-t border-slate-100 clear-both flex flex-row gap-12">
+            <div className="flex flex-col">
+              <span className="text-slate-900 font-bold text-sm uppercase tracking-wider">Location</span>
+              <span className="text-slate-500 text-base">Pune, MH</span>
             </div>
+            {/* Vertical Divider (Optional, remove if you want them even closer) */}
+            <div className="w-[1px] h-10 bg-slate-200"></div>
+            <div className="flex flex-col">
+              <span className="text-slate-900 font-bold text-sm uppercase tracking-wider">Philosophy</span>
+              <span className="text-slate-500 text-base">Test-Driven Development</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

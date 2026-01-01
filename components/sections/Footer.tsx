@@ -71,7 +71,7 @@ const Footer = () => {
 
           {/* Copy Email Button */}
           <div className="inline-flex flex-col gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-700">
               DIRECT EMAIL
             </span>
             <button

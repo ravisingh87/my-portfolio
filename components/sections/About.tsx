@@ -15,10 +15,12 @@ const About = () => {
             <div className="aspect-square bg-slate-100 rounded-xl relative overflow-hidden">
               <Image
                 src="/profile.jpeg"
-                alt="Ravi Shankar Singh"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                priority
+                alt="Ravi Shankar Singh - Frontend Developer"
+                width={400} // Optimal display width
+                height={400} // Optimal display height
+                priority // Tells the browser to load this immediately
+                className="object-cover shadow-lg" // Your Tailwind styling
+                quality={90} // Balance between quality and file size
               />
             </div>
           </div>

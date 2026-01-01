@@ -13,8 +13,8 @@
 
  body {
     /* Change from white to your dark background color */
-    background-color: #0f172a; 
-    color: #f8fafc; /* Change text to slate-50 for better default contrast */
+   background-color: #f8fafc; /* slate-50 */
+    color: #0f172a; /* slate-900 (High contrast text) */
     transition: background-color 0.3s, color 0.3s;
   }
 }

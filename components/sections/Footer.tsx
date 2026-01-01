@@ -58,7 +58,7 @@ const Footer = () => {
     </div>
   </div>;
   return (
-    <footer id="contact" className="bg-slate-900 text-white pt-20 pb-10">
+    <footer id="contact" className="bg-slate-900 text-slate-300 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
 
         {/* Left Side: Info & Copy Email */}
@@ -71,8 +71,8 @@ const Footer = () => {
 
           {/* Copy Email Button */}
           <div className="inline-flex flex-col gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Direct Email
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              DIRECT EMAIL
             </span>
             <button
               onClick={copyToClipboard}
@@ -87,7 +87,7 @@ const Footer = () => {
             </button>
             {copied && <span className="text-blue-400 text-xs animate-pulse">Copied to clipboard!</span>}
           </div>
-        {newLocal}
+          {newLocal}
         </div>
 
         {/* Right Side: The Form */}

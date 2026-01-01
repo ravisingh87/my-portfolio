@@ -20,7 +20,7 @@ export const Experience = () => (
       <h2 className="text-3xl font-bold mb-12">Professional Experience</h2>
       <div className="space-y-12">
         {experiences.map((exp, i) => (
-          <div key={i} className="relative pl-8 border-l-2 border-blue-200">
+          <div key={`${exp.company}-${i}`} className="relative pl-8 border-l-2 border-blue-200">
             <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600" />
             <span className="text-sm text-blue-600 font-semibold">{exp.period}</span>
             <h3 className="text-xl font-bold text-slate-900">{exp.company}</h3>

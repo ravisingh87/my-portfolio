@@ -1,7 +1,7 @@
 export const PERSONAL_INFO = {
   name: "Ravi Shankar Singh",
   title: "Senior Frontend Developer",
-  experience: "5.8+ Years",
+  experience: "6+ Years",
   email: "ravisingh19870903@gmail.com",
   location: "India",
   linkedIn: "https://www.linkedin.com/in/ravisingh87",

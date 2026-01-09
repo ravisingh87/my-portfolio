@@ -26,7 +26,7 @@ const About = () => {
           </div>
           {/* Experience Badge */}
           <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-xl z-10">
-            <p className="text-3xl font-bold leading-none">5.8</p>
+            <p className="text-3xl font-bold leading-none">6+</p>
             <p className="text-[10px] uppercase tracking-widest opacity-90 font-semibold">Years Experience</p>
           </div>
         </div>
@@ -34,7 +34,7 @@ const About = () => {
         {/* Narrative Text & Metadata Info */}
         <div className="text-lg text-slate-600 leading-relaxed text-justify">
           <p className="mb-6">
-            My journey in software development began 5.8 years ago with a simple goal:{' '}
+            My journey in software development began 6+ years ago with a simple goal:{' '}
             <span className="text-slate-900 font-semibold">
               to bridge the gap between complex business logic and intuitive user experiences.
             </span>

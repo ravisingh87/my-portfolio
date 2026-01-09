@@ -11,7 +11,7 @@ const Hero = () => {
         Ravi Shankar Singh
       </h1>
       <p className="text-xl text-slate-600 max-w-2xl mb-10">
-        5.8 years of experience driving digital transformation in Healthcare, Banking, and E-commerce. 
+        6+ years of experience driving digital transformation in Healthcare, Banking, and E-commerce. 
         Specializing in high-performance <span className="text-blue-600 font-medium">React, Next.js, and TypeScript.</span>
       </p>
       
